@@ -136,7 +136,7 @@ def VGG16_bb(subheads, classes, aux_branch=True, aux_classes=15):
         return fmodel
 
     else:
-        fmodel = Model(base_full.input, outmaps, name="IIC_sb")
+        fmodel = keras.models.Model(base_full.input, outmaps, name="IIC_sb")
         return fmodel
 
 
@@ -305,7 +305,7 @@ cluster_inf = infernce(backbone, image_path, "main")
 keys_out = cluster_inf.get_cluster_keys()
 
 """
-## Visualize the clusters using predicted clsuter keys
+## Visualize the clusters using predicted cluster keys
 """
 
 cluster_inf.visualize_cluster(0)
